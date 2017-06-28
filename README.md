@@ -20,7 +20,7 @@ El conjunto de datos contiene en total 150 muestras, las cuales fueron divididas
 
 Predecir la especie de flor en función de sus cuatro características físicas. Para ello se deben cumplir los siguiente objetivos específicos:
 
-1. Entrenar un algoritmo de clasifición supervisado que tome las cuatro variables y prediga el tipo de flor. El algoritmo debe ser entrenado sólo con la base de datos de entrenamiento. 
+1. Entrenar un algoritmo de clasifición supervisado que tome las cuatro variables y prediga el tipo de flor. El algoritmo debe ser entrenado sólo con la base de datos de entrenamiento.
 
 2. Medir el desempeño sobre la base de datos de prueba. Para medir el desempeño existen muchas funciones de costo interesantes, pero en este caso usaremos una de las más comunes llamada *Accuracy*. Consiste en dividir la cantidad de aciertos en la predicción del tipo de especie de los datos de prueba sobre la cantidad total de muestras en la base de datos de prueba.
 
@@ -30,7 +30,7 @@ Los datos están ubicados en la carpeta data. Existen dos archivos: *iris_train.
 
 ## Variables
 
-Tanto los datos de entrenamiento como prueba constan de 5 columnas: las primeras cuatro corresponden a los descriptores de la flor (ancho y largo de sépalos y pétalos) y la última columna corresponde a la clase de flor. Esta clase de flor es la variable nominal que se desea predecir. Ya que se tiene una variable objetivo y discreta que se desea predecir se dice que este es un problema de clasifición supervisado. 
+Tanto los datos de entrenamiento como prueba constan de 5 columnas: las primeras cuatro corresponden a los descriptores de la flor (ancho y largo de sépalos y pétalos) y la última columna corresponde a la clase de flor. Esta clase de flor es la variable nominal que se desea predecir. Ya que se tiene una variable objetivo y discreta que se desea predecir se dice que este es un problema de clasifición supervisado.
 
 Sepal length | Sepal width | Petal length | Petal width | Class |
 ---------|----------------|---------|------------|----------------|
@@ -54,34 +54,24 @@ Para resolver el reto primero debes clonar el repositorio usando el siguiente co
 `git clone https://github.com/{username}/supervised-basico-iris
 cd supervised-basico-iris `
 
-## Starter code en Python
-
-A continuación se presenta el código inicial para leer los datos. ¡Ahora te toca a ti continuar!
-
-```python
-#Importar librerías
-import pandas as pd
-
-#Leer datos
-train = pd.read_csv("data/iris_train.csv")
-test = pd.read_csv("data/iris_test.csv")
-
-#Explorar primeros registros
-train.head()
-train.head()
+##### Requerimientos
+* Python 2.7 con paquetes pandas, scikit-learn, numpy
 
 ```
-## Starter code en R
+pip install pandas
+pip install -U scikit-learn
+pip install numpy
+```
+### Procedimiento
 
-``` R
-
-#Leer datos
-train = read.csv("data/iris_train.csv")
-test = read.csv("data/iris_test.csv")
-
-#Explorar primeros registros
-head(train)
-head(test)
+Corre el siguiente codigo en consola
+```
+python starter_code.py
 ```
 
 
+### Metodo
+Usado el metodo "randomForest" con parametros (n_estimators=100,min_samples_leaf=20,max_features="auto")
+
+### Resultados
+0.9333
